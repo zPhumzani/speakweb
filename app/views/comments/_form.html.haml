@@ -1,0 +1,6 @@
+.well
+  = simple_form_for [@article, @article.comments.build] do |f|
+    .form-inputs
+      = f.input :body, label: false
+    .form-actions
+      = f.button :submit, 'Leave A Comment', class: 'btn btn-sm btn-primary'

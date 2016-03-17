@@ -1,0 +1,38 @@
+.page-header
+  %h2 All Articles In The Database
+
+= link_to 'New Article', new_admin_article_path, class: 'btn btn-primary'
+
+%table.table
+  %thead
+    %tr
+      %th User
+      %th Category
+      %th Title
+      %th Body
+      %th Publish
+      %th Slug
+      %th
+      %th
+      %th
+
+  %tbody
+    - @admin_articles.each do |admin_article|
+      %tr
+        %td= admin_article.user
+        %td= admin_article.category.name
+        %td= admin_article.title
+        %td= truncate admin_article.body
+        %td.text-center
+          - if admin_article.publish == true
+            .label.label-success= admin_article.publish
+          - else
+            .label.label-danger= admin_article.publish
+        %td= admin_article.slug
+        %td= link_to 'Show', admin_article
+        %td= link_to 'Edit', edit_admin_article_path(admin_article)
+        %td= link_to 'Destroy', admin_article, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+

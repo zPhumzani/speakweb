@@ -1,0 +1,16 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @user.first_name
+%p
+  %b Last name:
+  = @user.last_name
+%p
+  %b Email:
+  = @user.email
+
+- if user_signed_in? && (@user == current_user)
+  = link_to 'Edit', edit_user_path(@user)
+  \|
+  = link_to 'Back', users_path

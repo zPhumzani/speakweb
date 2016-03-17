@@ -1,0 +1,21 @@
+%article.post
+  %h2= link_to article.title, article, class: 'article_title'
+  %p.lead
+    by
+    = link_to article.user, user_path(article.user)
+  %p.text-muted
+    %span.glyphicon.glyphicon-time
+    Posted on
+    = article.created_at.strftime("%B %m, %Y")
+  - unless article.file_contents.blank?
+    %p.thumbnail
+      = image_tag(image_article_path(article), class: 'img-responsive')
+  %p
+    =  truncate( strip_tags(article.body), length: 120)
+    = link_to 'read more >>>', article
+  %ul.btn-group
+    = link_to "#{pluralize(article.comments.count, 'comment')}", article, class: 'btn btn-xs btn-link'
+    = link_to "#{pluralize(article.get_upvotes.size, 'like')}", like_article_path(article), method: :get, class: 'btn btn-xs btn-primary'
+    = link_to "#{pluralize(article.get_downvotes.size, 'dislike')}", dislike_article_path(article), method: :get, class: 'btn btn-xs btn-danger'
+
+%hr

@@ -1,0 +1,14 @@
+= simple_form_for [:admin, @admin_article] do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.association :category
+    = f.input :body
+    = f.input :all_tags, label: 'Tags'
+    = f.input :publish
+    = f.input :file, as: :file
+
+
+  .form-actions
+    = f.submit 'Publish Post', class: 'btn btn-success'

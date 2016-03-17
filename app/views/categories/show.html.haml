@@ -1,0 +1,13 @@
+%header.page-header
+  %h2= @category.name
+
+%post
+  - if @category.articles.blank?
+    .jumbotron.text-center
+      %h1 Sorry!!!
+      %p There are no posts in this category yet
+      = link_to 'View Other Posts', articles_path
+  - else
+    = render @category.articles
+
+= link_to 'Back', categories_path

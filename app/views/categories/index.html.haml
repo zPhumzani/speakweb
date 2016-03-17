@@ -1,0 +1,6 @@
+.page-header
+  %h1 Available Categories
+
+%ul.list-group
+  - @categories.each do |category|
+    %li.list-group-item= category.name

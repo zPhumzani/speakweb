@@ -1,0 +1,10 @@
+%header.page-header
+  %h1 Recent Posts
+
+%post 
+  - if @articles.blank?
+    %p Empty as fuck
+  - else
+    = render @articles
+
+= will_paginate @articles

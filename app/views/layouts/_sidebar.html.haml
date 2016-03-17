@@ -1,0 +1,21 @@
+.page-header
+  %h1 Related Topics
+.well
+  %h4 Blog Search
+  = form_tag search_path do 
+    .input-group
+      = text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Search'
+      %span.input-group-btn
+        = submit_tag 'Go!', class: 'btn btn-primary'
+
+.well
+  %h4 Categories
+  %ul.nav
+    - Category.all.each do |cat|
+      %li= link_to cat.name, cat
+
+.well
+  %h4 Quick Search Tags
+  %ul.list-inline
+    - Tag.all.each do |tag|
+      %li= link_to tag.name, tag_path(tag.name)

@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @admin_article.user
+%p
+  %b Category:
+  = @admin_article.category
+%p
+  %b Title:
+  = @admin_article.title
+%p
+  %b Body:
+  = @admin_article.body
+%p
+  %b File:
+  = @admin_article.file
+%p
+  %b Publish:
+  = @admin_article.publish
+%p
+  %b Slug:
+  = @admin_article.slug
+
+= link_to 'Edit', edit_admin_article_path(@admin_article)
+\|
+= link_to 'Back', admin_articles_path

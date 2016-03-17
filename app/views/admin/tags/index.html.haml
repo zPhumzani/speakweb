@@ -1,0 +1,23 @@
+.page-header
+  %h2 All Tags In The Database
+
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Article
+      %th
+      %th
+      %th
+
+  %tbody
+    - @admin_tags.each do |admin_tag|
+      %tr
+        %td= admin_tag.name
+        %td= admin_tag.articles
+        %td= link_to 'Edit', edit_admin_tag_path(admin_tag)
+        -#SSSSSS%td= link_to 'Destroy', admin_tag, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Tag', new_admin_tag_path

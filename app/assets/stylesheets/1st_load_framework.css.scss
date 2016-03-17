@@ -1,0 +1,125 @@
+// import the CSS framework
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// make all images responsive by default
+img {
+  @extend .img-responsive;
+  margin: 0 auto;
+  }
+// override for the 'Home' navigation link
+.navbar-default {
+  box-shadow: 0px 3px 5px #000;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+
+  .nav {
+   li {
+     a {
+       font-size: 1.4em;
+       //text-shadow: 0px 1px 2px #000;
+       }
+    } 
+  }
+
+  .navbar-brand {
+    font-size: 2.4em;
+    color: #535eca;
+    font-weight: 900;
+    text-decoration: uppercase;
+    text-shadow: 0px 1px 2px #000;
+  }
+  
+}
+
+
+// THESE ARE EXAMPLES YOU CAN MODIFY
+// create your own classes
+// to make views framework-neutral
+.column {
+  @extend .col-md-6;
+  @extend .text-center;
+  }
+.form {
+  @extend .col-md-6;
+  }
+.form-centered {
+  @extend .col-md-6;
+  @extend .text-center;
+  }
+.submit {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-lg;
+  }
+// apply styles to HTML elements
+// to make views framework-neutral
+main {
+  @extend .container;
+  //background-color: #eee;
+  padding-bottom: 80px;
+  //width: 100%;
+  margin-top: 0px; // accommodate the navbar
+  }
+section {
+  @extend .row;
+  margin-top: 20px;
+  }
+
+
+article.post {
+  .btn {
+   margin-left: 0;
+  }
+
+  ul {
+    padding-left: 0;
+    margin-left: 0;
+  }
+}
+
+a {
+  @xtend .text-info;
+}
+
+.page-header {
+  border: none;
+  box-shadow: 0px 3px 0px #000;
+  color: #535eca;
+}
+
+h1 {
+  text-shadow: 0px 1px 1px #000;
+}
+
+h2 {
+  text-shadow: 0px 1px 1px #000;
+}
+
+.thumbnail {
+  border: none;
+  box-shadow: 0px 0px 3px 2px #000;
+  border-radius: 10px;
+}
+
+#sidebar {
+  .well {
+    h4 {
+      padding: 10px;
+      margin-bottom: 5px;
+      border-bottom: 1px solid black;
+    }
+  }
+.well, .thumbnail {
+  border: none;
+  box-shadow: 0px 0px 3px 2px #000;
+  border-radius: 10px;
+}
+
+.well {
+  //margin: 2px;
+  padding: 10px;
+}
+
+}

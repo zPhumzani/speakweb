@@ -1,0 +1,24 @@
+.page-header
+  %h2 All Categories In The Database
+
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Slug
+      %th
+      %th
+      %th
+
+  %tbody
+    - @admin_categories.each do |admin_category|
+      %tr
+        %td= admin_category.name
+        %td= admin_category.slug
+        %td= link_to 'Show', admin_category
+        %td= link_to 'Edit', edit_admin_category_path(admin_category)
+        %td= link_to 'Destroy', admin_category, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Category', new_admin_category_path
