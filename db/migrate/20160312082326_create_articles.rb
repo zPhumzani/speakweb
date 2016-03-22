@@ -9,10 +9,9 @@ class CreateArticles < ActiveRecord::Migration
       t.string :content_type
       t.binary :file_contents
       t.boolean :publish, default: false
-      t.string :slug, limit: 50
+      t.string :slug
 
       t.timestamps null: false
     end
-    add_index :articles, :slug, unique: true
   end
 end

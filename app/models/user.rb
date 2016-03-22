@@ -1,4 +1,13 @@
 class User < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :slug_cadidates, use: :slugged
+
+  def slug_cadidates
+  	[
+  	  :first_name,
+  	  [:first_name, :last_name]
+  	]
+  end
   has_many :articles
   has_secure_password
 

@@ -17,7 +17,7 @@
         %td= admin_category.slug
         %td= link_to 'Show', admin_category
         %td= link_to 'Edit', edit_admin_category_path(admin_category)
-        %td= link_to 'Destroy', admin_category, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Destroy', admin_category_path(admin_category), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
